@@ -3,6 +3,7 @@
 ## 功能
 - C++ Publisher: 发布速度指令，控制小海龟画圆
 - Python Subscriber: 订阅小海龟位置并打印
+- Publisher和Subscriber双版本构建
 
 ## 运行步骤
 1. 启动 turtlesim:
