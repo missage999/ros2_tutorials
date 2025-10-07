@@ -24,4 +24,28 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+# 添加可执行文件：turtle_publisher
+add_executable(turtle_publisher src/turtle_publisher.cpp)
+# 链接依赖库
+ament_target_dependencies(turtle_publisher rclcpp geometry_msgs)
+
+# 安装可执行文件（重要！否则 ros2 run 找不到）
+install(TARGETS
+  turtle_publisher
+  DESTINATION lib/${PROJECT_NAME})
+
+  # 安装 launch 文件
+install(DIRECTORY launch/
+  DESTINATION share/${PROJECT_NAME}
+)
+
+# 找到 ament_cmake_python
+find_package(ament_cmake_python REQUIRED)
+
+install(PROGRAMS
+  src/turtle_subscriber.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME turtle_subscriber          # <-- 加这一行
+)
+
 ament_package()
