@@ -1,0 +1,7 @@
+# Request
+float64 max_vel  # 单位: m/s
+
+---
+# Response
+bool success
+string message

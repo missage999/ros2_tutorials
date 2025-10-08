@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>srv_param</name>
+  <version>0.0.0</version>
+  <description>Service and Parameter demo: dynamic max velocity</description>
+  <maintainer email="2270656968@qq.com">wangyu</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- 必须放在顶层，rosidl 脚本只在这里扫描 -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
