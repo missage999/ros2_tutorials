@@ -24,7 +24,6 @@ install(PROGRAMS
   src/turtle_publisher.py
   src/turtle_subscriber.py
   DESTINATION lib/${PROJECT_NAME}
-  RENAME turtle_publisher_py turtle_subscriber_py   # 去掉 .py 并区分名字
 )
 
 # ---------- 安装 ----------
