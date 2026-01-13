@@ -13,8 +13,8 @@ def generate_launch_description():
         #Node(package='pub_sub', executable='turtle_subscriber_cpp', name='cpp_sub'),
 
         # 4. Python 画圆（同样发 /turtle1/cmd_vel）
-        Node(package='pub_sub', executable='turtle_publisher_py', name='py_pub'),
+        Node(package='pub_sub', executable='turtle_publisher.py', name='py_pub'),
 
         # 5. Python 打印位姿（同样订阅 /turtle1/pose）
-        Node(package='pub_sub', executable='turtle_subscriber_py', name='py_sub'),
+        Node(package='pub_sub', executable='turtle_subscriber.py', name='py_sub'),
     ])
