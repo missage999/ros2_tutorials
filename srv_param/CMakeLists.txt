@@ -40,10 +40,7 @@ ament_target_dependencies(param_server rclcpp)
 rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} rosidl_typesupport_cpp)
 target_link_libraries(param_server "${cpp_typesupport_target}")
 
-# 4. 把生成头文件目录挂进来
-rosidl_target_interfaces(param_server ${PROJECT_NAME} "rosidl_typesupport_cpp")
-
-# 5. 安装
+# 4. 安装
 install(TARGETS param_server DESTINATION lib/${PROJECT_NAME})
 
 # Python Client

@@ -10,11 +10,7 @@ endif()
 # ==============================
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(rclpy REQUIRED)             # 虽未直接用于C++，但包依赖中声明了
-find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
-find_package(tf2_msgs REQUIRED)          # 实际可省略（除非直接用TFMessage）
-find_package(tf2_geometry_msgs REQUIRED) # ✅ 必须添加！用于 getYaw / doTransform
 find_package(geometry_msgs REQUIRED)
 
 # ==============================
@@ -43,12 +39,11 @@ install(TARGETS static_tf_broadcaster
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# TF 监听器（使用 tf2_geometry_msgs）
+# TF 监听器
 add_executable(tf2_listener src/tf2_listener.cpp)
 ament_target_dependencies(tf2_listener
   rclcpp
   tf2_ros
-  tf2_geometry_msgs  # ✅ 正确链接
 )
 install(TARGETS tf2_listener
   DESTINATION lib/${PROJECT_NAME}
